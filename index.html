@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — AI Operations Systems</title>
+<meta name="description" content="AI operations systems that run real businesses: multi-agent back offices, deterministic policy engines, verification gates, and audit trails.">
+<style>
+:root{--bg:#0d1117;--fg:#e6edf3;--muted:#9198a1;--border:#30363d;--link:#58a6ff;--code:#161b22;--accent:#2f81f7}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:48px 24px 96px}
+.markdown-body h1{font-size:2rem;line-height:1.25;margin:0 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+.markdown-body h2{font-size:1.5rem;margin:1.8em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+.markdown-body h3{font-size:1.2rem;margin:1.6em 0 .5em}
+.markdown-body p{margin:0 0 1em}
+.markdown-body a{color:var(--link);text-decoration:none}
+.markdown-body a:hover{text-decoration:underline}
+.markdown-body ul,.markdown-body ol{margin:0 0 1em;padding-left:1.6em}
+.markdown-body li{margin:.25em 0}
+.markdown-body li>strong{color:#fff}
+.markdown-body hr{height:1px;border:0;background:var(--border);margin:2em 0}
+.markdown-body code{background:var(--code);padding:.2em .4em;border-radius:6px;font-size:85%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.markdown-body pre{background:var(--code);padding:16px;border-radius:6px;overflow:auto;border:1px solid var(--border)}
+.markdown-body pre code{background:none;padding:0}
+.markdown-body table{border-collapse:collapse;width:100%;margin:0 0 1em;display:block;overflow:auto}
+.markdown-body th,.markdown-body td{border:1px solid var(--border);padding:8px 13px;text-align:left}
+.markdown-body th{background:var(--code);font-weight:600}
+.markdown-body tr:nth-child(2n){background:#0f141b}
+.markdown-body blockquote{border-left:4px solid var(--border);color:var(--muted);margin:0 0 1em;padding:0 1em}
+.markdown-body img{max-width:100%}
+@media(prefers-color-scheme:light){
+:root{--bg:#ffffff;--fg:#1f2328;--muted:#59636e;--border:#d1d9e0;--link:#0969da;--code:#f6f8fa}
+.markdown-body tr:nth-child(2n){background:#f6f8fa}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="markdown-body">
+<h1 dir="auto">Portfolio — AI Operations Systems</h1>
+<p dir="auto">I build AI operations systems that run real businesses. Not demos, not<br>
+wrappers: multi-agent back offices with deterministic policy engines,<br>
+verification gates, and audit trails, installed where mistakes have<br>
+consequences.</p>
+<p dir="auto">Every project below is a system I designed, built, and operate. The impact<br>
+numbers are pulled from live runs and committed evidence — not projections.</p>
+<ul dir="auto">
+<li><strong>Draft and surface, never execute.</strong> Agents prepare; humans approve anything that sends, spends, or publishes.</li>
+<li><strong>Policy over vibes.</strong> A deterministic rules layer — not an LLM — decides what runs autonomously.</li>
+<li><strong>Verify before reporting done.</strong> Self-reported completion without evidence gets sent back, by design.</li>
+</ul>
+<hr>
+<h2 dir="auto">Projects</h2>
+<h3 dir="auto">Snag — capture → triage → act</h3>
+<p dir="auto">Turn a saved TikTok into your next action. Send Snag a TikTok link (or a video<br>
+file) and it returns a transcript, an AI-written note, and a triage pass<br>
+(stage, action type, impact, effort) filed into a searchable vault. An Actions<br>
+queue forces a decision on every save, because saved folders are where ideas go<br>
+to die.</p>
+<ul dir="auto">
+<li><strong>Loop:</strong> save → transcribe → understand → act.</li>
+<li><strong>Stack:</strong> Python (stdlib), Telegram bot, ElevenLabs server-side transcription with a local faster-whisper fallback, DeepSeek for note + triage, SQLite vault, launchd on macOS.</li>
+<li><strong>Lineage:</strong> v2 of the TikTok Brain capture → transcribe → categorize pipeline, rebuilt as a standalone consumer product (text-only, cost-first, no ClickUp).</li>
+<li><strong>Status:</strong> live and dogfooded on Telegram.</li>
+<li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/snag">https://github.com/Kane808-AI/snag</a></li>
+</ul>
+<h3 dir="auto">Agent OS v2 — headless autonomous operations platform</h3>
+<p dir="auto">A headless, event-driven operating system for autonomous business operations,<br>
+designed as a resellable platform: a business-agnostic kernel, departments as<br>
+optional modules, industry packs, and per-tenant isolation. A deterministic<br>
+policy engine — not an LLM — decides whether an action is automatic,<br>
+notify-and-proceed, approval-required, or forbidden, and a completion claim<br>
+requires independent read-back evidence from a separate QA actor.</p>
+<ul dir="auto">
+<li><strong>Verification:</strong> work moves through <code class="notranslate">claimed → attempted → observed → verified | disproved | inconclusive</code>; immutable evidence receipts carry a canonical content hash.</li>
+<li><strong>Engineering depth:</strong> 345 passing tests behind a green CI gate; 15 verified milestone goals, each with an architecture decision record.</li>
+<li><strong>Note:</strong> public showcase snapshot of a private production codebase (reference tenant sanitized to "Northwind").</li>
+<li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/agent-os-v2-showcase">https://github.com/Kane808-AI/agent-os-v2-showcase</a></li>
+</ul>
+<h3 dir="auto">Law Firm OS — AI back office for a law practice</h3>
+<p dir="auto">Delivered as a paid consulting engagement for a criminal defense and personal<br>
+injury practice. AI intake classification feeds four systems of record; a CRM<br>
+layer runs SMS-first follow-up and booking; a six-agent operations layer runs<br>
+the back office. It is the firm's working back office, not a demo and not a<br>
+chatbot.</p>
+<ul dir="auto">
+<li><strong>Privilege in code, not prompts:</strong> PreToolUse hooks inspect every tool call before it executes and deny the ones that touch protected ground; writes are scanned for SSN/DOB shapes.</li>
+<li><strong>Structure:</strong> one orchestrator (Chief of Staff) as the sole human interface, five specialist agents, and a five-gate verification standard on every result.</li>
+<li><strong>Autonomy as a table:</strong> reading, research, and drafting are autonomous; anything that moves a file, sends a message, touches money, or publishes requires explicit human approval.</li>
+<li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/law-firm-os">https://github.com/Kane808-AI/law-firm-os</a></li>
+</ul>
+<h3 dir="auto">demo-repo — policy-gate reference example</h3>
+<p dir="auto">A minimal, runnable reference for the pattern underneath everything else: a<br>
+deterministic policy gate that classifies an action as automatic,<br>
+notify-and-proceed, approval-required, or forbidden, plus a verification step<br>
+that refuses to mark work "done" without evidence. Small, self-contained<br>
+Python with tests — the smallest honest illustration of how the systems above<br>
+decide what runs on its own.</p>
+<ul dir="auto">
+<li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/demo-repo">https://github.com/Kane808-AI/demo-repo</a></li>
+</ul>
+<hr>
+<h2 dir="auto">Impact metrics</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>System</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passing tests, green CI on every push</td>
+<td>345</td>
+<td>Agent OS v2</td>
+</tr>
+<tr>
+<td>Verified milestone goals, each with an ADR</td>
+<td>15</td>
+<td>Agent OS v2</td>
+</tr>
+<tr>
+<td>Scheduled executions clean across a verified four-day stretch</td>
+<td>91 / 91</td>
+<td>Agent fleet</td>
+</tr>
+<tr>
+<td>Standing automated jobs running daily</td>
+<td>25</td>
+<td>Portfolio-wide</td>
+</tr>
+<tr>
+<td>Tool-call decisions logged on day one of the guardrail hooks</td>
+<td>33</td>
+<td>Law Firm OS</td>
+</tr>
+<tr>
+<td>Denials and real PII catches on day one</td>
+<td>3 denials · 1 PII catch</td>
+<td>Law Firm OS</td>
+</tr>
+<tr>
+<td>Ideas processed through the capture → triage → act pipeline</td>
+<td>132</td>
+<td>TikTok Brain → Snag</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2 dir="auto">Links</h2>
+<ul dir="auto">
+<li><strong>GitHub profile:</strong> <a href="https://github.com/Kane808-AI">https://github.com/Kane808-AI</a></li>
+<li><strong>Law Firm OS:</strong> <a href="https://github.com/Kane808-AI/law-firm-os">https://github.com/Kane808-AI/law-firm-os</a></li>
+<li><strong>Agent OS v2:</strong> <a href="https://github.com/Kane808-AI/agent-os-v2-showcase">https://github.com/Kane808-AI/agent-os-v2-showcase</a></li>
+<li><strong>Snag:</strong> <a href="https://github.com/Kane808-AI/snag">https://github.com/Kane808-AI/snag</a></li>
+<li><strong>demo-repo:</strong> <a href="https://github.com/Kane808-AI/demo-repo">https://github.com/Kane808-AI/demo-repo</a></li>
+<li><strong>Website:</strong> <a href="https://chriskaneshiro.com" rel="nofollow">https://chriskaneshiro.com</a></li>
+<li><strong>Agency (Brand75):</strong> <a href="https://brand75.com" rel="nofollow">https://brand75.com</a></li>
+</ul>
+</article>
+</div>
+</body>
+</html>
