@@ -16,20 +16,6 @@ numbers are pulled from live runs and committed evidence — not projections.
 
 ## Projects
 
-### Snag — capture → triage → act
-
-Turn a saved TikTok into your next action. Send Snag a TikTok link (or a video
-file) and it returns a transcript, an AI-written note, and a triage pass
-(stage, action type, impact, effort) filed into a searchable vault. An Actions
-queue forces a decision on every save, because saved folders are where ideas go
-to die.
-
-- **Loop:** save → transcribe → understand → act.
-- **Stack:** Python (stdlib), Telegram bot, ElevenLabs server-side transcription with a local faster-whisper fallback, DeepSeek for note + triage, SQLite vault, launchd on macOS.
-- **Lineage:** v2 of the TikTok Brain capture → transcribe → categorize pipeline, rebuilt as a standalone consumer product (text-only, cost-first, no ClickUp).
-- **Status:** live and dogfooded on Telegram.
-- **Repo:** https://github.com/Kane808-AI/snag
-
 ### Agent OS v2 — headless autonomous operations platform
 
 A headless, event-driven operating system for autonomous business operations,
@@ -46,13 +32,11 @@ requires independent read-back evidence from a separate QA actor.
 
 ### Law Firm OS — AI back office for a law practice
 
-Delivered as a paid consulting engagement for a criminal defense and personal
-injury practice. AI intake classification feeds four systems of record; a CRM
-layer runs SMS-first follow-up and booking; a six-agent operations layer runs
-the back office. It is the firm's working back office, not a demo and not a
-chatbot.
+An anonymous architecture case study for AI intake, CRM automation, and
+governed agent operations in a law firm environment. It documents a working
+back office design while excluding client identity, configuration, and data.
 
-- **Privilege in code, not prompts:** PreToolUse hooks inspect every tool call before it executes and deny the ones that touch protected ground; writes are scanned for SSN/DOB shapes.
+- **Privacy controls at the tool boundary:** PreToolUse hooks inspect tool calls before execution, deny access to protected paths, and scan writes for high-risk PII shapes.
 - **Structure:** one orchestrator (Chief of Staff) as the sole human interface, five specialist agents, and a five-gate verification standard on every result.
 - **Autonomy as a table:** reading, research, and drafting are autonomous; anything that moves a file, sends a message, touches money, or publishes requires explicit human approval.
 - **Repo:** https://github.com/Kane808-AI/law-firm-os
@@ -79,8 +63,6 @@ decide what runs on its own.
 | Scheduled executions clean across a verified four-day stretch | 91 / 91 | Agent fleet |
 | Standing automated jobs running daily | 25 | Portfolio-wide |
 | Tool-call decisions logged on day one of the guardrail hooks | 33 | Law Firm OS |
-| Denials and real PII catches on day one | 3 denials · 1 PII catch | Law Firm OS |
-| Ideas processed through the capture → triage → act pipeline | 132 | TikTok Brain → Snag |
 
 ---
 
@@ -89,7 +71,6 @@ decide what runs on its own.
 - **GitHub profile:** https://github.com/Kane808-AI
 - **Law Firm OS:** https://github.com/Kane808-AI/law-firm-os
 - **Agent OS v2:** https://github.com/Kane808-AI/agent-os-v2-showcase
-- **Snag:** https://github.com/Kane808-AI/snag
 - **demo-repo:** https://github.com/Kane808-AI/demo-repo
 - **Website:** https://chriskaneshiro.com
 - **Agency (Brand75):** https://brand75.com
