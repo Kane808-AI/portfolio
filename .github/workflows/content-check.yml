@@ -1,0 +1,45 @@
+name: content-check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check recruiter-facing content and links
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          text = Path("README.md").read_text(encoding="utf-8")
+          required = ["## Projects", "## Impact metrics", "## Links"]
+          forbidden = [
+              r"github\.com/Kane808-AI/snag",
+              r"paid consulting",
+              r"criminal defense",
+              r"personal injury",
+              r"real PII",
+              r"PII catch",
+              r"TikTok Brain",
+          ]
+          missing = [item for item in required if item not in text]
+          found = [pattern for pattern in forbidden if re.search(pattern, text, re.I)]
+          urls = re.findall(r"https?://[^\s)>]+", text)
+          insecure = [url for url in urls if not url.startswith("https://")]
+          if missing or found or insecure:
+              raise SystemExit(
+                  f"missing={missing} forbidden={found} insecure_links={insecure}"
+              )
+          print(f"checked {len(urls)} HTTPS links and recruiter content gates")
+          PY
