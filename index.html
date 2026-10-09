@@ -53,19 +53,6 @@ numbers are pulled from live runs and committed evidence — not projections.</p
 </ul>
 <hr>
 <h2 dir="auto">Projects</h2>
-<h3 dir="auto">Snag — capture → triage → act</h3>
-<p dir="auto">Turn a saved TikTok into your next action. Send Snag a TikTok link (or a video<br>
-file) and it returns a transcript, an AI-written note, and a triage pass<br>
-(stage, action type, impact, effort) filed into a searchable vault. An Actions<br>
-queue forces a decision on every save, because saved folders are where ideas go<br>
-to die.</p>
-<ul dir="auto">
-<li><strong>Loop:</strong> save → transcribe → understand → act.</li>
-<li><strong>Stack:</strong> Python (stdlib), Telegram bot, ElevenLabs server-side transcription with a local faster-whisper fallback, DeepSeek for note + triage, SQLite vault, launchd on macOS.</li>
-<li><strong>Lineage:</strong> v2 of the TikTok Brain capture → transcribe → categorize pipeline, rebuilt as a standalone consumer product (text-only, cost-first, no ClickUp).</li>
-<li><strong>Status:</strong> live and dogfooded on Telegram.</li>
-<li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/snag">https://github.com/Kane808-AI/snag</a></li>
-</ul>
 <h3 dir="auto">Agent OS v2 — headless autonomous operations platform</h3>
 <p dir="auto">A headless, event-driven operating system for autonomous business operations,<br>
 designed as a resellable platform: a business-agnostic kernel, departments as<br>
@@ -80,13 +67,11 @@ requires independent read-back evidence from a separate QA actor.</p>
 <li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/agent-os-v2-showcase">https://github.com/Kane808-AI/agent-os-v2-showcase</a></li>
 </ul>
 <h3 dir="auto">Law Firm OS — AI back office for a law practice</h3>
-<p dir="auto">Delivered as a paid consulting engagement for a criminal defense and personal<br>
-injury practice. AI intake classification feeds four systems of record; a CRM<br>
-layer runs SMS-first follow-up and booking; a six-agent operations layer runs<br>
-the back office. It is the firm's working back office, not a demo and not a<br>
-chatbot.</p>
+<p dir="auto">An anonymous architecture case study for AI intake, CRM automation, and<br>
+governed agent operations in a law firm environment. It documents a working<br>
+back office design while excluding client identity, configuration, and data.</p>
 <ul dir="auto">
-<li><strong>Privilege in code, not prompts:</strong> PreToolUse hooks inspect every tool call before it executes and deny the ones that touch protected ground; writes are scanned for SSN/DOB shapes.</li>
+<li><strong>Privacy controls at the tool boundary:</strong> PreToolUse hooks inspect tool calls before execution, deny access to protected paths, and scan writes for high-risk PII shapes.</li>
 <li><strong>Structure:</strong> one orchestrator (Chief of Staff) as the sole human interface, five specialist agents, and a five-gate verification standard on every result.</li>
 <li><strong>Autonomy as a table:</strong> reading, research, and drafting are autonomous; anything that moves a file, sends a message, touches money, or publishes requires explicit human approval.</li>
 <li><strong>Repo:</strong> <a href="https://github.com/Kane808-AI/law-firm-os">https://github.com/Kane808-AI/law-firm-os</a></li>
@@ -137,16 +122,6 @@ decide what runs on its own.</p>
 <td>33</td>
 <td>Law Firm OS</td>
 </tr>
-<tr>
-<td>Denials and real PII catches on day one</td>
-<td>3 denials · 1 PII catch</td>
-<td>Law Firm OS</td>
-</tr>
-<tr>
-<td>Ideas processed through the capture → triage → act pipeline</td>
-<td>132</td>
-<td>TikTok Brain → Snag</td>
-</tr>
 </tbody>
 </table></markdown-accessiblity-table>
 <hr>
@@ -155,7 +130,6 @@ decide what runs on its own.</p>
 <li><strong>GitHub profile:</strong> <a href="https://github.com/Kane808-AI">https://github.com/Kane808-AI</a></li>
 <li><strong>Law Firm OS:</strong> <a href="https://github.com/Kane808-AI/law-firm-os">https://github.com/Kane808-AI/law-firm-os</a></li>
 <li><strong>Agent OS v2:</strong> <a href="https://github.com/Kane808-AI/agent-os-v2-showcase">https://github.com/Kane808-AI/agent-os-v2-showcase</a></li>
-<li><strong>Snag:</strong> <a href="https://github.com/Kane808-AI/snag">https://github.com/Kane808-AI/snag</a></li>
 <li><strong>demo-repo:</strong> <a href="https://github.com/Kane808-AI/demo-repo">https://github.com/Kane808-AI/demo-repo</a></li>
 <li><strong>Website:</strong> <a href="https://chriskaneshiro.com" rel="nofollow">https://chriskaneshiro.com</a></li>
 <li><strong>Agency (Brand75):</strong> <a href="https://brand75.com" rel="nofollow">https://brand75.com</a></li>
