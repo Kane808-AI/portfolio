@@ -27,7 +27,7 @@ policy engine, not an LLM, decides whether an action is automatic,
 notify-and-proceed, approval-required, or forbidden, and a completion claim
 requires independent read-back evidence from a separate QA actor.
 
-- **Live today:** an approval-gated agent channel running as a background service, where a model drafts every reply and a human decision releases every outbound message. It is the platform's first authorized external action, and deliberately the narrowest one that could work.
+- **Evidenced, not asserted:** an approval-gated agent channel ran as a background service from July to August 2026, with a model drafting every reply and a human decision releasing every outbound message. It was handed to a successor system in August 2026, and left 25 governed model calls, 26 routing decisions, 33 audit records and 16 workflow runs in its evidence database.
 - **Verification:** work moves through `claimed -> attempted -> observed -> verified | disproved | inconclusive`; immutable evidence receipts carry a canonical content hash.
 - **Engineering depth:** 345 passing tests behind a green CI gate; 15 verified milestone goals, each with an architecture decision record; 23 ADRs and 64 tracked requirements in the repository.
 - **Note:** public showcase snapshot of a private production codebase, with the reference tenant sanitized to a fictional agency.
